@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewBoutiqueActivity"
+    android:id="@+id/newboutiquelayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NewBoutiqueTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:text="Ajouter une Boutique"
+        />
+
+    <ImageView
+        android:id="@+id/boutique1Image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@id/editBoutiqueName"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/boutiqueProductsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Produits :"
+        app:layout_constraintTop_toBottomOf="@id/boutique1Image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/addProductButton"
+        app:layout_constraintTop_toBottomOf="@id/boutiqueProductsText"
+        app:layout_constraintVertical_bias="0.479"
+        tools:layout_editor_absoluteX="201dp"
+        tools:listitem="@layout/list_item" />
+
+    <Button
+        android:id="@+id/addProductButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter un produit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/checkedTop"
+        />
+
+    <EditText
+        android:id="@+id/editBoutiqueName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/NewBoutiqueTextView"
+        app:layout_constraintBottom_toTopOf="@id/boutique1Image"
+        android:hint="Entrer un titre de boutique"
+        />
+
+    <Button
+        android:id="@+id/boutique1addImage"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:text="+"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/boutique1Image"
+        app:layout_constraintBottom_toBottomOf="@+id/boutique1Image"
+        />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/boutique1Image"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fond d'écran : "
+        app:layout_constraintTop_toTopOf="@id/checkedMiddle"
+        app:layout_constraintBottom_toBottomOf="@id/checkedMiddle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="35sp"
+        android:gravity="center"
+        />
+
+    <CheckedTextView
+        android:id="@+id/checkedMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/checkedBottom"
+        android:text="red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:checkMark="?android:attr/listChoiceIndicatorSingle"
+        />
+    <CheckedTextView
+        android:id="@+id/checkedBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/confirmTemplate1"
+        android:text="blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:checkMark="?android:attr/listChoiceIndicatorSingle"
+        />
+    <CheckedTextView
+        android:id="@+id/checkedTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/checkedMiddle"
+        android:text="green"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:checkMark="?android:attr/listChoiceIndicatorSingle"
+        />
+
+    <Button
+        android:id="@+id/confirmTemplate1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
